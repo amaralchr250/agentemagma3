@@ -1,0 +1,16 @@
+[Unit]
+Description=force1updater
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/Magma3/Force1/Client/Updater
+ExecStart= /opt/Magma3/Force1/Client/Updater/Force1.Updater
+SyslogIdentifier=updaterlog
+PIDFile=/var/run/force1.updater.pid
+KillMode=control-group
+TimeoutStopSec=30
+User=root
+LimitNOFILE=100000
+
+[Install]
+WantedBy=multi-user.target
